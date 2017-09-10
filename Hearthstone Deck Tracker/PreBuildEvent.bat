@@ -55,7 +55,7 @@ if exist "%SolutionDir%HSReplay-Api" (
   git -C "%SolutionDir%HSReplay-Api" fetch
   git -C "%SolutionDir%HSReplay-Api" reset --hard origin/master
 ) else (
-  git clone --depth 1 https://github.com/HearthSim/HSReplay-API-Client.git "%SolutionDir%HSReplay-Api"
+  git clone -b oauth --depth 1 https://github.com/HearthSim/HSReplay-API-Client.git "%SolutionDir%HSReplay-Api"
 )
 
 echo.
@@ -65,7 +65,7 @@ if exist "%SolutionDir%HDT-Localization" (
   git -C "%SolutionDir%HDT-Localization" fetch
   git -C "%SolutionDir%HDT-Localization" reset --hard origin/master
 ) else (
-  git clone --depth 1 https://github.com/HearthSim/HDT-Localization.git "%SolutionDir%HDT-Localization"
+  git clone -b twitch-extension --depth 1 https://github.com/HearthSim/HDT-Localization.git "%SolutionDir%HDT-Localization"
 )
 
 echo.

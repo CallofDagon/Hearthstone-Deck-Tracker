@@ -172,6 +172,8 @@
     <Reference Include="System.IO.Compression.FileSystem" />
     <Reference Include="System.Numerics" />
     <Reference Include="System.Printing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -233,6 +235,16 @@
     <Compile Include="Controls\DeckImportingControl.xaml.cs">
       <DependentUpon>DeckImportingControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="FlyoutControls\Options\Streaming\StreamingCapturableOverlay.xaml.cs">
+      <DependentUpon>StreamingCapturableOverlay.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FlyoutControls\Options\Streaming\StreamingTwitchExtension.xaml.cs">
+      <DependentUpon>StreamingTwitchExtension.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HsReplay\HSReplayNetOAuth.cs" />
+    <Compile Include="HsReplay\Data\OAuthData.cs" />
+    <Compile Include="Live\Data\PayloadFactory.cs" />
+    <Compile Include="Utility\JsonSerializer.cs" />
     <Compile Include="Utility\Attributes\AssetNameAttribute.cs" />
     <Compile Include="FlyoutControls\DeckEditor\Enums\ClassFilter.cs" />
     <Compile Include="FlyoutControls\DeckEditor\Enums\CostFilter.cs" />
@@ -262,6 +274,12 @@
     <Compile Include="FlyoutControls\DeckExport\DeckExportViewModel.cs" />
     <Compile Include="HsReplay\Data\JsonCache.cs" />
     <Compile Include="Stats\CompiledStats\DateTimeHelper.cs" />
+    <Compile Include="Live\Data\BoardState.cs" />
+    <Compile Include="Live\Data\DataType.cs" />
+    <Compile Include="Live\Data\Payload.cs" />
+    <Compile Include="Utility\Twitch\TwitchApi.cs" />
+    <Compile Include="Live\BoardStateWatcher.cs" />
+    <Compile Include="Live\LiveDataManager.cs" />
     <Compile Include="UITheme.cs" />
     <Compile Include="Utility\Converters\LocalizationConverter.cs" />
     <Compile Include="Utility\Converters\GameStatsHasReplayConverter.cs" />
@@ -449,9 +467,6 @@
       <DependentUpon>OptionsSearch.xaml</DependentUpon>
     </Compile>
     <Compile Include="FlyoutControls\Options\AdvancedOptions.cs" />
-    <Compile Include="FlyoutControls\Options\Overlay\OverlayStreaming.xaml.cs">
-      <DependentUpon>OverlayStreaming.xaml</DependentUpon>
-    </Compile>
     <Compile Include="FlyoutControls\Options\Tracker\TrackerNotifications.xaml.cs">
       <DependentUpon>TrackerNotifications.xaml</DependentUpon>
     </Compile>
@@ -1039,7 +1054,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="FlyoutControls\Options\Overlay\OverlayStreaming.xaml">
+    <Page Include="FlyoutControls\Options\Streaming\StreamingCapturableOverlay.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FlyoutControls\Options\Streaming\StreamingTwitchExtension.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
